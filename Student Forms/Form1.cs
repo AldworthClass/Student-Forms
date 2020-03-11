@@ -12,8 +12,9 @@ namespace Student_Forms
 {
     public partial class Form1 : Form
     {
-        //
-        List<Student> students = new List<Student>();
+        
+        public static List<Student> students = new List<Student>();
+        public static List<string> garbage = new List<string>();
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +22,12 @@ namespace Student_Forms
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            students.Add(new Student("Bart", "Simpson"));
+            students.Add(new Student("Lisa", "Simpson"));
+            students.Add(new Student("Martin", "Prince"));
+            students.Add(new Student("Nelson", "Muntz"));
+            students.Add(new Student("Ralph", "Wiggum"));
+            lstStudents.DataSource = students;
         }
     }
 }

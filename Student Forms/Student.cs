@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Student_Forms
 {
-    class Student : IComparable<Student>
+    public class Student : IComparable<Student>
     {       
         private static Random generator = new Random();
         private string firstName;
