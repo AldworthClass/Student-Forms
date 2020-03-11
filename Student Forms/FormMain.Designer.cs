@@ -1,6 +1,6 @@
 ﻿namespace Student_Forms
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -33,9 +33,10 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnDetails = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.lblSearchnstructions = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstStudents
@@ -54,6 +55,7 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add Student";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // btnRemove
             // 
@@ -63,6 +65,7 @@
             this.btnRemove.TabIndex = 2;
             this.btnRemove.Text = "Remove Student";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
             // 
             // btnDetails
             // 
@@ -81,13 +84,15 @@
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Edit Student";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 193);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtSearch.Location = new System.Drawing.Point(12, 208);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(247, 20);
+            this.txtSearch.TabIndex = 5;
+            this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
             // btnLoad
             // 
@@ -107,20 +112,30 @@
             this.btnSave.Text = "Save List";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // lblSearchnstructions
+            // 
+            this.lblSearchnstructions.AutoSize = true;
+            this.lblSearchnstructions.Location = new System.Drawing.Point(12, 192);
+            this.lblSearchnstructions.Name = "lblSearchnstructions";
+            this.lblSearchnstructions.Size = new System.Drawing.Size(41, 13);
+            this.lblSearchnstructions.TabIndex = 8;
+            this.lblSearchnstructions.Text = "Search";
+            // 
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 407);
+            this.ClientSize = new System.Drawing.Size(271, 238);
+            this.Controls.Add(this.lblSearchnstructions);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnLoad);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDetails);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lstStudents);
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.Text = "Student ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -135,9 +150,10 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnDetails;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblSearchnstructions;
     }
 }
 
