@@ -40,6 +40,7 @@ namespace Student_Forms
             {
                 lstStudents.DataSource = null;  //Allows ListBox contents to be cleared
                 lstStudents.Items.Clear();      //Clears students from revious searches
+                students.Sort();
                 foreach (Student student in students)
                 {
                     if (student.ToString().ToUpper().Contains(txtSearch.Text.Trim().ToUpper()))   //Case insensitive seach
@@ -49,9 +50,12 @@ namespace Student_Forms
         }
 
         private void BtnRemove_Click(object sender, EventArgs e)
-        {
+        {          
             students.Remove((Student)lstStudents.SelectedItem);
-            lstStudents.Items.Remove(lstStudents.SelectedItem);
+            if (txtSearch.Text.Length == 0)
+                refreshListBox();
+            else
+                lstStudents.Items.Remove((Student)lstStudents.SelectedItem);   
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -69,7 +73,32 @@ namespace Student_Forms
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
+            if (lstStudents.SelectedItem != null)
+            {
+                FormEdit frmEdit = new FormEdit((Student)lstStudents.SelectedItem);
+                frmEdit.ShowDialog();
+                TxtSearch_TextChanged(sender, e);   //Refresh list with search
+            }
+            else
+                MessageBox.Show("Please select a student.");
+                
+        }
 
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            if (lstStudents.SelectedItem!= null)
+            {
+                FormDetails frmDetails = new FormDetails((Student)lstStudents.SelectedItem);
+                frmDetails.ShowDialog();
+            }
+            else
+                MessageBox.Show("Please select a student.");
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
         }
     }
 }

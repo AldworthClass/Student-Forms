@@ -37,6 +37,7 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblSearchnstructions = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstStudents
@@ -75,6 +76,7 @@
             this.btnDetails.TabIndex = 3;
             this.btnDetails.Text = "View Details";
             this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // btnEdit
             // 
@@ -90,7 +92,7 @@
             // 
             this.txtSearch.Location = new System.Drawing.Point(12, 208);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(247, 20);
+            this.txtSearch.Size = new System.Drawing.Size(176, 20);
             this.txtSearch.TabIndex = 5;
             this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
@@ -121,11 +123,22 @@
             this.lblSearchnstructions.TabIndex = 8;
             this.lblSearchnstructions.Text = "Search";
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(194, 206);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(65, 23);
+            this.btnClear.TabIndex = 9;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(271, 238);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lblSearchnstructions);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnLoad);
@@ -154,6 +167,7 @@
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblSearchnstructions;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 

@@ -19,7 +19,7 @@ namespace Student_Forms
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace Student_Forms
             if (txtFirstName.Text.Trim().Length > 0 && txtLastName.Text.Trim().Length > 0)
             {
                 FormMain.students.Add(new Student(txtFirstName.Text.Trim(), txtLastName.Text.Trim()));
-                this.Close();
+                this.Dispose();
             }
             else
                 MessageBox.Show("Please enter a valid first and last name");

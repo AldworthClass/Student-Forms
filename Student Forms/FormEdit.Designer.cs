@@ -35,7 +35,7 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblNewFirstName = new System.Windows.Forms.Label();
             this.lblNewLastName = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnChange
@@ -46,6 +46,7 @@
             this.btnChange.TabIndex = 0;
             this.btnChange.Text = "Change";
             this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // btnCancel
             // 
@@ -100,19 +101,19 @@
             this.lblNewLastName.TabIndex = 6;
             this.lblNewLastName.Text = "New Last Name:";
             // 
-            // textBox1
+            // txtLastName
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 91);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtLastName.Location = new System.Drawing.Point(113, 91);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(121, 20);
+            this.txtLastName.TabIndex = 7;
             // 
             // FormEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 198);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(265, 172);
+            this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.lblNewLastName);
             this.Controls.Add(this.lblNewFirstName);
             this.Controls.Add(this.txtFirstName);
@@ -121,7 +122,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnChange);
             this.Name = "FormEdit";
-            this.Text = "FormEdit";
+            this.Text = "Edit Student";
             this.Load += new System.EventHandler(this.FormEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -137,6 +138,6 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label lblNewFirstName;
         private System.Windows.Forms.Label lblNewLastName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLastName;
     }
 }

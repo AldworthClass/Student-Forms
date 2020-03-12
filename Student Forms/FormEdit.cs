@@ -27,7 +27,16 @@ namespace Student_Forms
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
+        }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            if (txtFirstName.Text.Trim().Length > 0)
+                student.FirstName = txtFirstName.Text.Trim();
+            if (txtLastName.Text.Trim().Length > 0)
+                student.LastName = txtLastName.Text.Trim();
+            this.Dispose();
         }
     }
 }
