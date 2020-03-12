@@ -38,6 +38,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.lblSearchnstructions = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
+            this.ofdStudents = new System.Windows.Forms.OpenFileDialog();
+            this.sfdStudents = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // lstStudents
@@ -104,6 +106,7 @@
             this.btnLoad.TabIndex = 6;
             this.btnLoad.Text = "Load List";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnSave
             // 
@@ -113,6 +116,7 @@
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save List";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // lblSearchnstructions
             // 
@@ -132,6 +136,10 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // ofdStudents
+            // 
+            this.ofdStudents.FileName = "students";
             // 
             // FormMain
             // 
@@ -168,6 +176,8 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblSearchnstructions;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.OpenFileDialog ofdStudents;
+        private System.Windows.Forms.SaveFileDialog sfdStudents;
     }
 }
 

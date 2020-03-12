@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -99,6 +100,57 @@ namespace Student_Forms
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtSearch.Text = "";
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            ofdStudents.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";    
+            ofdStudents.RestoreDirectory = true;                                   
+            ofdStudents.FileName = "students";
+            ofdStudents.DefaultExt = ".txt";
+            students.Clear(); //Start with a new movie list
+            if (ofdStudents.ShowDialog() == DialogResult.OK)
+            {
+                int count = 0;
+                string fname = "";
+                string lname = "";
+                int studentNum;
+                foreach (string line in File.ReadLines(ofdStudents.FileName, Encoding.UTF8))
+                {
+                    count++;
+                    if (count == 1)
+                        fname = line;
+                    else if (count == 2)
+                        lname = line;
+                    else if (count == 3)
+                    {
+                        studentNum = Convert.ToInt32(line);
+                        count = 0;
+                        students.Add(new Student(fname, lname, studentNum));
+                    }
+                        
+                }
+                refreshListBox();
+            }
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            sfdStudents.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";    //Filter
+            sfdStudents.RestoreDirectory = true;                                   //Will use previous directory
+            sfdStudents.FileName = "students";
+            sfdStudents.DefaultExt = ".txt";                                       //File will be saved with this extension
+            if (sfdStudents.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter writer = new StreamWriter(sfdStudents.FileName);
+                foreach (Student student in students)
+                {
+                    writer.WriteLine(student.FirstName);
+                    writer.WriteLine(student.LastName);
+                    writer.WriteLine(student.StudentNumber);
+                }
+                writer.Close();                    
+            }
         }
     }
 }

@@ -22,6 +22,15 @@ namespace Student_Forms
             studentNumber = generator.Next(0, 1000) + 555000;
             GenerateEmail();
         }
+        public Student(string firstName, string lastName, int studentNumber)
+        {
+            //Random generator = new Random();
+            this.firstName = firstName.Trim();
+            this.lastName = lastName.Trim();
+            this.studentNumber = studentNumber;
+            GenerateEmail();
+        }
+
 
         public string Email
         {
